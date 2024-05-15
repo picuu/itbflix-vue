@@ -1,11 +1,24 @@
-<script setup>
-import SectionLayout from '@/layouts/SectionLayout.vue'
-</script>
-
 <template>
   <main>
-    <SectionLayout title="title">
-      <!-- content here -->
+    <SectionLayout>
+      <SignUpForm />
     </SectionLayout>
   </main>
 </template>
+
+<script>
+import SectionLayout from '@/layouts/SectionLayout.vue'
+import SignUpForm from '@/components/SignUpForm.vue'
+
+export default {
+  name: 'SignUpView',
+  components: {
+    SectionLayout,
+    SignUpForm
+  }
+}
+</script>
+
+<style scoped>
+/* Estilos adicionales si los necesitas */
+</style>
