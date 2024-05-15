@@ -5,7 +5,7 @@ import SectionLayout from '@/layouts/SectionLayout.vue'
 
 <template>
   <main>
-    <SectionLayout :title="'Films'">
+    <SectionLayout title="Films">
       <FilmRows />
     </SectionLayout>
   </main>
