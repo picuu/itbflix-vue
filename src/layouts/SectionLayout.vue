@@ -29,7 +29,7 @@ section {
 }
 
 h2 {
-  font-size: 4.75rem;
+  font-size: 4.5rem;
   font-weight: 700;
 }
 </style>
