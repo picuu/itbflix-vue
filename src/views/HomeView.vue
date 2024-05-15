@@ -1,12 +1,14 @@
 <script setup>
-import FilmRows from '@/components/FilmsRow.vue'
+import HomeFilmRows from '@/components/HomeFilmsRow.vue'
 import SectionLayout from '@/layouts/SectionLayout.vue'
+
+import { films } from '@/services/defaultFilms.js'
 </script>
 
 <template>
   <main>
     <SectionLayout title="Films">
-      <FilmRows />
+      <HomeFilmRows :films="films" />
     </SectionLayout>
   </main>
 </template>
