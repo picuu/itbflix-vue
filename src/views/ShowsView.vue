@@ -1,11 +1,12 @@
 <script setup>
 import SectionLayout from '@/layouts/SectionLayout.vue'
+import FilmsRow from '@/components/FilmsRow.vue'
 </script>
 
 <template>
   <main>
-    <SectionLayout title="title">
-      <!-- content here -->
+    <SectionLayout title="Shows">
+      <FilmsRow search="love" type="series" />
     </SectionLayout>
   </main>
 </template>

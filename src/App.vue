@@ -8,11 +8,11 @@ import ItbflixLogo from '@/assets/img/itbflix-logo.png'
   <header>
     <img :src="ItbflixLogo" alt="ITBFlix" />
     <nav>
-      <RouterLink to="/">Inicio</RouterLink>
-      <RouterLink to="/films">Películas</RouterLink>
-      <RouterLink to="/shows">Series</RouterLink>
-      <RouterLink to="/crud">Crud</RouterLink>
-      <RouterLink to="/sign-up">Registrarse</RouterLink>
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/films">Films</RouterLink>
+      <RouterLink to="/shows">Shows</RouterLink>
+      <RouterLink to="/crud">CRUD</RouterLink>
+      <RouterLink to="/sign-up">Sign Up</RouterLink>
     </nav>
   </header>
 
