@@ -1,33 +1,60 @@
-<template>
-  <div class="film-card">
-    <img :src="image" :alt="name" />
-    <h3>{{ name }}</h3>
-    <p><strong>Year:</strong> {{ year }}</p>
-    <p><strong>Type:</strong> {{ type }}</p>
-  </div>
-</template>
-
 <script>
 export default {
-  name: 'FilmCard',
+  name: 'CrudCard',
   props: {
-    name: String,
     image: String,
-    year: String,
-    type: String,
-    imdbID: String
+    name: String,
+    year: {
+      type: String,
+      required: false
+    },
+    id: {
+      type: String,
+      required: false
+    }
   }
 }
 </script>
 
+<template>
+  <article>
+    <img :src="image" :alt="name" :title="name" />
+    <h3>{{ name }}</h3>
+    <template v-if="id">
+      <div>
+        <button :data-film-id="id">E</button>
+        <button :data-film-id="id">B</button>
+      </div>
+    </template>
+  </article>
+</template>
+
 <style scoped>
-.film-card {
-  border: 1px solid #ccc;
-  padding: 1rem;
-  text-align: center;
+article {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
-.film-card img {
-  max-width: 100%;
-  height: auto;
+
+article:hover {
+  cursor: pointer;
+}
+
+article:hover img {
+  transform: translateY(-0.5rem);
+}
+
+img {
+  border-radius: 0.75rem;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  display: block;
+  object-fit: cover;
+  box-shadow: 0 60px 60px -60px #ffffff40;
+  transition: transform 0.2s ease-in-out;
+}
+
+h3 {
+  text-align: center;
 }
 </style>

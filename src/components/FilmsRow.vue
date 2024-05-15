@@ -3,6 +3,10 @@ import FilmCard from '@/components/FilmCard.vue'
 
 export default {
   name: 'FilmsRow',
+  props: {
+    search: String,
+    type: String
+  },
   components: {
     FilmCard
   },
@@ -17,14 +21,14 @@ export default {
   methods: {
     async fetchMovies() {
       try {
-        const response = await fetch('http://www.omdbapi.com/?apikey=a8eef58&s=batman&type=movie')
+        const response = await fetch(`http://www.omdbapi.com/?apikey=a8eef58&s=${this.search}&type=${this.type}`)
         const data = await response.json()
         if (data.Response === 'True') {
           this.films = data.Search.map((movie) => ({
             name: movie.Title,
             image: movie.Poster !== 'N/A' ? movie.Poster : 'default-image-url.jpg',
             year: movie.Year,
-            type: movie.Type,
+            id: movie.imdbID
           }))
         } else {
           console.error('Error fetching movies:', data.Error)
@@ -40,12 +44,7 @@ export default {
 <template>
   <div>
     <template v-for="(film, index) in films" :key="index">
-      <FilmCard
-        :image="film.image"
-        :name="film.name"
-        :year="film.year"
-        :type="film.type"
-      />
+      <FilmCard :image="film.image" :name="film.name" :year="film.year" />
     </template>
   </div>
 </template>
@@ -53,7 +52,7 @@ export default {
 <style scoped>
 div {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2.5rem;
 }
 </style>
