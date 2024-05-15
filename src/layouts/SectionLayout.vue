@@ -25,6 +25,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  padding-bottom: var(--section-gap);
 }
 
 h2 {
