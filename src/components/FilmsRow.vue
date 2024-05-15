@@ -1,11 +1,5 @@
 <script>
-import FilmCard from '@/components/FilmCard.vue'
-
-import JokerPoster from '@/assets/img/joker.webp'
-import SpidermanPoster from '@/assets/img/spiderman.jpg'
-import NovedadFrentePoster from '@/assets/img/sin-novedad-en-el-frente.jpg'
-import LoboWallStreetPoster from '@/assets/img/lobo-wall-street.jpg'
-import ItPoster from '@/assets/img/it.jpg'
+import FilmCard from '@/common/FilmCard.vue'
 
 export default {
   name: 'FilmsRow',
@@ -14,30 +8,30 @@ export default {
   },
   data() {
     return {
-      films: [
-        {
-          name: 'The Joker',
-          image: JokerPoster
-        },
-        {
-          name: 'SpiderMan: No Way Home',
-          image: SpidermanPoster
-        },
-        {
-          name: 'Sin novedad en el frente',
-          image: NovedadFrentePoster
-        },
-        {
-          name: 'The Wolf of Wall Street',
-          image: LoboWallStreetPoster
-        },
-        {
-          name: 'IT',
-          image: ItPoster
-        }
-      ]
+      films: []
     }
-  }
+  },
+  mounted() {
+    this.fetchMovies()
+  },
+  methods: {
+    async fetchMovies() {
+      try {
+        const response = await fetch('http://www.omdbapi.com/?apikey=a8eef58&s=batman&type=movie')
+        const data = await response.json()
+        if (data.Response === 'True') {
+          this.films = data.Search.map((movie) => ({
+            name: movie.Title,
+            image: movie.Poster !== 'N/A' ? movie.Poster : 'default-image-url.jpg'
+          }))
+        } else {
+          console.error('Error fetching movies:', data.Error)
+        }
+      } catch (error) {
+        console.error('Error fetching movies:', error)
+      }
+    }
+  }
 }
 </script>
 
