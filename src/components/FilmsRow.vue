@@ -1,5 +1,5 @@
 <script>
-import FilmCard from '@/common/FilmCard.vue'
+import FilmCard from '@/components/FilmCard.vue'
 
 export default {
   name: 'FilmsRow',
@@ -22,7 +22,9 @@ export default {
         if (data.Response === 'True') {
           this.films = data.Search.map((movie) => ({
             name: movie.Title,
-            image: movie.Poster !== 'N/A' ? movie.Poster : 'default-image-url.jpg'
+            image: movie.Poster !== 'N/A' ? movie.Poster : 'default-image-url.jpg',
+            year: movie.Year,
+            type: movie.Type,
           }))
         } else {
           console.error('Error fetching movies:', data.Error)
@@ -31,14 +33,19 @@ export default {
         console.error('Error fetching movies:', error)
       }
     }
-  }
+  }
 }
 </script>
 
 <template>
   <div>
     <template v-for="(film, index) in films" :key="index">
-      <FilmCard :image="film.image" :name="film.name" />
+      <FilmCard
+        :image="film.image"
+        :name="film.name"
+        :year="film.year"
+        :type="film.type"
+      />
     </template>
   </div>
 </template>
