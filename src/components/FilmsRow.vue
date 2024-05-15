@@ -1,5 +1,5 @@
 <script>
-import FilmCard from '@/common/FilmCard.vue'
+import FilmCard from '@/components/FilmCard.vue'
 
 import JokerPoster from '@/assets/img/joker.webp'
 import SpidermanPoster from '@/assets/img/spiderman.jpg'
