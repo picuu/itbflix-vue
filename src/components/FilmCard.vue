@@ -28,7 +28,7 @@ export default {
         filmCard.style.display = 'none'
       }
       console.log('delete film', id)
-    }
+    },
   }
 }
 </script>

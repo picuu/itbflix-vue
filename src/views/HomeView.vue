@@ -12,3 +12,4 @@ import { films } from '@/services/defaultFilms.js'
     </SectionLayout>
   </main>
 </template>
+

@@ -28,6 +28,17 @@ const router = createRouter({
       path: '/sign-up',
       name: 'sign-up',
       component: () => import('../views/SignUpView.vue')
+    },
+    {
+      path: '/edit',
+      name: 'Edit',
+      component: () => import('../views/EditView.vue'),
+      props: true
+    },
+    {
+      path: '/add-film',
+      name: 'AddFilm',
+      component: () => import('../views/AddFilmView.vue')
     }
   ]
 })
