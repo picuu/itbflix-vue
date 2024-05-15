@@ -1,35 +1,33 @@
+<template>
+  <div class="film-card">
+    <img :src="image" :alt="name" />
+    <h3>{{ name }}</h3>
+    <p><strong>Year:</strong> {{ year }}</p>
+    <p><strong>Type:</strong> {{ type }}</p>
+  </div>
+</template>
+
 <script>
 export default {
   name: 'FilmCard',
   props: {
+    name: String,
     image: String,
-    name: String
+    year: String,
+    type: String,
+    imdbID: String
   }
 }
 </script>
 
-<template>
-  <article>
-    <img :src="image" :alt="name" :title="name" />
-  </article>
-</template>
-
 <style scoped>
-article {
-  box-shadow: 0 60px 60px -60px #ffffff40;
-  transition: transform 0.2s ease-in-out;
+.film-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  text-align: center;
 }
-
-article:hover {
-  transform: translateY(-0.5rem);
-  cursor: pointer;
-}
-
-img {
-  border-radius: 0.75rem;
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
+.film-card img {
+  max-width: 100%;
+  height: auto;
 }
 </style>
