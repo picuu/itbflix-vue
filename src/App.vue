@@ -1,6 +1,6 @@
 <script setup>
 import { RouterView, RouterLink } from 'vue-router'
-
+import FooterComponent from '@/common/FooterComponent.vue'
 import ItbflixLogo from '@/assets/img/itbflix-logo.png'
 </script>
 
@@ -17,6 +17,8 @@ import ItbflixLogo from '@/assets/img/itbflix-logo.png'
   </header>
 
   <RouterView />
+
+  <FooterComponent />
 </template>
 
 <style scoped>
