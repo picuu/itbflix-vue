@@ -62,4 +62,13 @@ div {
 div:last-of-type {
   justify-self: end;
 }
+
+@media (width < 600px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    text-align: center;
+  }
+}
 </style>

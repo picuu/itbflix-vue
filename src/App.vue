@@ -7,13 +7,18 @@ import ItbflixLogo from '@/assets/img/itbflix-logo.png'
 <template>
   <header>
     <img :src="ItbflixLogo" alt="ITBFlix" />
-    <nav>
-      <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/films">Films</RouterLink>
-      <RouterLink to="/shows">Shows</RouterLink>
-      <RouterLink to="/crud">CRUD</RouterLink>
-      <RouterLink to="/sign-up">Sign Up</RouterLink>
-    </nav>
+
+    <div class="navbar">
+      <div class="menu">MENU</div>
+      
+      <nav>
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/films">Films</RouterLink>
+        <RouterLink to="/shows">Shows</RouterLink>
+        <RouterLink to="/crud">CRUD</RouterLink>
+        <RouterLink to="/sign-up">Sign Up</RouterLink>
+      </nav>
+    </div>
   </header>
 
   <RouterView />
@@ -22,6 +27,14 @@ import ItbflixLogo from '@/assets/img/itbflix-logo.png'
 </template>
 
 <style scoped>
+.navbar {
+  position: relative;
+}
+
+.menu {
+  display: none;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -51,8 +64,56 @@ a {
   transition-property: background-color, color;
 }
 
-a:hover {
+a:hover, .menu:hover {
+  cursor: pointer;
   background-color: rgb(31 41 55 / 0.8);
   color: rgb(252 165 165);
+}
+
+@media (width < 790px) {
+  .menu {
+    display: block;
+    padding: .6rem 2rem;
+    background-color: rgb(28, 36, 46);
+    color: #eee;
+  }
+
+  nav {
+    position: absolute;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    background-color: rgb(28, 36, 46);
+    width: 100%;
+    z-index: 1;
+  }
+
+  a {
+    padding: .25rem .5rem;
+    background: none;
+    margin-bottom: .25rem;
+  }
+
+  .menu:hover nav, .navbar:hover nav {
+    display: flex;
+  }
+}
+
+@media (width < 480px) {
+  img {
+    width: 125px;
+  }
+
+}
+
+@media (width < 360px) {
+  img {
+    width: 90px;
+  }
+
+  .menu {
+    padding-inline: 1.25rem;
+  }
 }
 </style>
