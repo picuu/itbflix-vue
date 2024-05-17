@@ -10,7 +10,7 @@ import ItbflixLogo from '@/assets/img/itbflix-logo.png'
 
     <div class="navbar">
       <div class="menu">MENU</div>
-      
+
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/films">Films</RouterLink>
@@ -56,26 +56,27 @@ nav {
 
 a {
   padding: 0.35rem 1rem;
-  background-color: rgb(31 41 55 / 0.5);
+  background-color: var(--color-background-mute);
   border-radius: 0.25rem;
-  color: #eee;
+  color: var(--color-text);
   text-decoration: none;
   transition: 0.2s ease-in-out;
   transition-property: background-color, color;
 }
 
-a:hover, .menu:hover {
+a:hover,
+.menu:hover {
   cursor: pointer;
-  background-color: rgb(31 41 55 / 0.8);
-  color: rgb(252 165 165);
+  background-color: var(--color-background-soft);
+  color: var(--color-text-accent);
 }
 
 @media (width < 790px) {
   .menu {
     display: block;
-    padding: .6rem 2rem;
-    background-color: rgb(28, 36, 46);
-    color: #eee;
+    padding: 0.6rem 2rem;
+    background-color: var(--color-background-mute);
+    color: var(--color-text);
   }
 
   nav {
@@ -84,18 +85,19 @@ a:hover, .menu:hover {
     display: none;
     flex-direction: column;
     gap: 0;
-    background-color: rgb(28, 36, 46);
+    background-color: var(--color-background-mute);
     width: 100%;
     z-index: 1;
   }
 
   a {
-    padding: .25rem .5rem;
+    padding: 0.25rem 0.5rem;
     background: none;
-    margin-bottom: .25rem;
+    margin-bottom: 0.25rem;
   }
 
-  .menu:hover nav, .navbar:hover nav {
+  .menu:hover nav,
+  .navbar:hover nav {
     display: flex;
   }
 }
@@ -104,7 +106,6 @@ a:hover, .menu:hover {
   img {
     width: 125px;
   }
-
 }
 
 @media (width < 360px) {

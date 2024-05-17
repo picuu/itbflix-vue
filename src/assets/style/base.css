@@ -32,6 +32,7 @@
 
   --color-heading: var(--vt-c-text-light-1);
   --color-text: var(--vt-c-text-light-1);
+  --color-text-accent: rgba(214, 95, 95, 0.64);
 
   --section-gap: 160px;
 }
