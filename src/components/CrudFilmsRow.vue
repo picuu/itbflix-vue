@@ -1,5 +1,5 @@
 <script>
-import FilmCard from '@/components/FilmCard.vue'
+import CrudFilmCard from '@/components/CrudFilmCard.vue'
 
 export default {
   name: 'FilmsRow',
@@ -8,7 +8,7 @@ export default {
     type: String
   },
   components: {
-    FilmCard
+    CrudFilmCard
   },
   data() {
     return {
@@ -44,7 +44,7 @@ export default {
 <template>
   <div>
     <template v-for="(film, index) in films" :key="index">
-      <FilmCard :image="film.image" :name="film.name" :year="film.year" :id="film.id" />
+      <CrudFilmCard :image="film.image" :name="film.name" :year="film.year" :id="film.id" />
     </template>
   </div>
 </template>
