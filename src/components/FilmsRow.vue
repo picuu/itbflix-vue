@@ -21,7 +21,7 @@ export default {
   methods: {
     async fetchMovies() {
       try {
-        const response = await fetch(`http://www.omdbapi.com/?apikey=a8eef58&s=${this.search}&type=${this.type}`)
+        const response = await fetch(`s://www.omdbapi.com/?apikey=a8eef58&s=${this.search}&type=${this.type}`)
         const data = await response.json()
         if (data.Response === 'True') {
           this.films = data.Search.map((movie) => ({
