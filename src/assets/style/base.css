@@ -48,6 +48,7 @@
     --color-heading: var(--vt-c-text-dark-1);
     --color-text: var(--vt-c-text-dark-2);
     --color-text-accent: rgba(247, 113, 113, 0.64);
+    --color-text-bright: rgba(245, 245, 245, 0.84);
   }
 }
 

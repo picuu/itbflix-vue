@@ -44,7 +44,7 @@ export default {
 <template>
   <div>
     <template v-for="(film, index) in films" :key="index">
-      <FilmCard :image="film.image" :name="film.name" :year="film.year" />
+      <FilmCard :image="film.image" :name="film.name" :year="film.year" :id="film.id" />
     </template>
   </div>
 </template>
